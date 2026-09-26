@@ -801,8 +801,8 @@ footer{background:var(--dark);color:#fff;padding:34px 0 24px}
     <span class="eyebrow line">05 / Begin</span>
     <h2 class="section-title">Let&rsquo;s build <em>yours.</em></h2>
     <p>Tell us about your project and we&rsquo;ll be in touch to schedule your consultation.</p>
-    <!-- CONTACT FORM: set action to your form endpoint (e.g. https://formspree.io/f/XXXXXXX). Until then, submissions open a pre-filled email to the address below. -->
-    <form id="contactForm" action="" method="POST" data-fallback-email="vrhomebuildersinc@gmail.com">
+    <!-- CONTACT FORM: submissions are delivered by Web3Forms (access key below). Manage the recipient email in the Web3Forms dashboard. -->
+    <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" data-fallback-email="vrhomebuildersinc@gmail.com">
       <input type="text" name="name" placeholder="Full Name" autocomplete="name" required>
       <input type="email" name="email" placeholder="Email Address" autocomplete="email" required>
       <input type="tel" name="phone" placeholder="Phone Number" autocomplete="tel">
@@ -810,8 +810,10 @@ footer{background:var(--dark);color:#fff;padding:34px 0 24px}
       <input type="text" name="location" placeholder="Project Location">
       <select name="budget"><option value="">Estimated Budget</option><option>$100k – $250k</option><option>$250k – $500k</option><option>$500k – $1M</option><option>$1M+</option></select>
       <textarea name="message" placeholder="Tell us about your project"></textarea>
-      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0">
-      <input type="hidden" name="_subject" value="New website inquiry — V&amp;R Home Builders">
+      <input type="hidden" name="access_key" value="9dec517f-cb68-4520-91d4-cfdc5b835e2c">
+      <input type="hidden" name="subject" value="New website inquiry — V&amp;R Home Builders">
+      <input type="hidden" name="from_name" value="V&amp;R Website">
+      <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
       <button type="submit" class="btn btn-gold">Send Message</button>
       <p class="form-note">By submitting, you agree to our <a href="privacy.html">Privacy Notice</a>. We never sell your information.</p>
       <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
@@ -986,13 +988,13 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
 // contact form: posts to the configured endpoint; falls back to a pre-filled email until one is set
 (function(){const f=document.getElementById('contactForm');if(!f)return;const st=document.getElementById('formStatus');
-  f.addEventListener('submit',async e=>{e.preventDefault();if(f._gotcha&&f._gotcha.value)return;
+  f.addEventListener('submit',async e=>{e.preventDefault();if(f.botcheck&&f.botcheck.checked)return;
     const fd=new FormData(f),ep=f.getAttribute('action');
     if(!ep){const lines=['Name: '+fd.get('name'),'Email: '+fd.get('email'),'Phone: '+(fd.get('phone')||''),'Project type: '+(fd.get('project_type')||''),'Location: '+(fd.get('location')||''),'Budget: '+(fd.get('budget')||''),'','Message:',fd.get('message')||''];
       location.href='mailto:'+f.dataset.fallbackEmail+'?subject='+encodeURIComponent('Website inquiry — '+fd.get('name'))+'&body='+encodeURIComponent(lines.join('\n'));return;}
     const btn=f.querySelector('button');btn.disabled=true;st.textContent='Sending…';
-    try{const r=await fetch(ep,{method:'POST',body:fd,headers:{Accept:'application/json'}});
-      if(r.ok){f.reset();st.textContent='Thank you — we\u2019ll be in touch shortly to schedule your consultation.';}
+    try{const r=await fetch(ep,{method:'POST',body:fd,headers:{Accept:'application/json'}});const j=await r.json().catch(()=>({}));
+      if(r.ok&&j.success!==false){f.reset();st.textContent='Thank you — we\u2019ll be in touch shortly to schedule your consultation.';}
       else throw 0;}catch(_){st.textContent='Something went wrong. Please call or email us directly.';}
     btn.disabled=false;});
 })();
