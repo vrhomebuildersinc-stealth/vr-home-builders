@@ -1,0 +1,26 @@
+/* ===== V&R shared motion & polish layer ===== */
+:root{--bronze-l:#B08D5E;--ease:cubic-bezier(.2,.7,.2,1)}
+body{animation:pageIn .7s ease both}
+body.leaving{opacity:0;transition:opacity .35s ease}
+@keyframes pageIn{from{opacity:0}to{opacity:1}}
+::selection{background:rgba(138,106,69,.28)}
+/* scroll progress */
+.progress{position:fixed;top:0;left:0;height:2px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--bronze),var(--bronze-l));z-index:300;pointer-events:none}
+/* active nav link */
+.nav-links a.active:not(.nav-cta)::after{width:100%}
+header.nav:not(.scrolled):not(.solid) .nav-links a.active:not(.nav-cta){color:var(--bronze-l)}
+/* button shine */
+.btn-gold,.nav-cta{position:relative;overflow:hidden}
+.btn-gold::before,.nav-cta::before{content:'';position:absolute;top:0;left:-80%;width:50%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.28),transparent);transform:skewX(-20deg);transition:left .7s ease;pointer-events:none}
+.btn-gold:hover::before,.nav-cta:hover::before{left:130%}
+/* staggered children reveal */
+.stagger>*{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .9s var(--ease);transition-delay:calc(var(--i,0)*90ms)}
+.stagger.in>*{opacity:1;transform:none}
+/* image wipe reveal */
+.wipe{clip-path:inset(0 0 100% 0);transition:clip-path 1.2s var(--ease);transition-delay:calc(var(--i,0)*110ms)}
+.in .wipe,.wipe.in{clip-path:inset(0 0 0 0)}
+/* eyebrow line */
+.eyebrow.line{display:flex!important;align-items:center;gap:14px}
+.eyebrow.line::before{content:'';width:0;height:1px;background:currentColor;transition:width .9s var(--ease) .2s}
+.in .eyebrow.line::before,.eyebrow.line.in::before{width:34px}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01s!important;transition-duration:.01s!important}.stagger>*{opacity:1;transform:none}.wipe{clip-path:none}}

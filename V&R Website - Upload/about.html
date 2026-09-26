@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — V&amp;R Home Builders Inc.</title>
+<meta name="description" content="Meet V&amp;R Home Builders Inc. — the Los Angeles team behind every build, and the standards that guide our work.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="About — V&amp;R Home Builders Inc.">
+<meta property="og:description" content="Meet V&amp;R Home Builders Inc. — the Los Angeles team behind every build, and the standards that guide our work.">
+<meta name="theme-color" content="#191714">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="fx.css">
+<style>
+.intro{padding:78px 0 64px}
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.intro-grid .eyebrow{display:block;margin-bottom:14px}
+.intro-grid h2{font-size:clamp(30px,3.6vw,46px);margin-bottom:20px;line-height:1.12}
+.intro-grid p{font-size:15px;color:var(--slate);margin-bottom:16px}
+.intro-img{overflow:hidden}
+.intro-img img{width:100%;height:100%;object-fit:cover;transition:transform 1s ease}
+.intro-img:hover img{transform:scale(1.05)}
+.stats{background:var(--cream);padding:54px 0}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;text-align:center}
+.stat .num .star{font-size:.62em;vertical-align:.32em;margin-left:3px}
+.stat .num{font-family:var(--serif);font-size:46px;color:var(--bronze);line-height:1}
+.stat .lbl{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--slate);margin-top:10px}
+.values{padding:30px 0 90px}
+.values .sec-head{text-align:center;margin-bottom:46px}
+.values .sec-head .eyebrow{display:block;margin-bottom:14px}
+.values .sec-head h2{font-size:clamp(28px,3.4vw,42px)}
+.val-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.val-card{padding:36px 30px;background:var(--warm-white);border:1px solid var(--line);transition:all .4s ease}
+.val-card:hover{transform:translateY(-7px);box-shadow:0 18px 40px rgba(44,42,39,.08);border-color:var(--white-oak)}
+.val-card .ic{width:36px;height:36px;color:var(--bronze);margin-bottom:16px}
+.val-card h3{font-size:22px;margin-bottom:10px}
+.val-card p{font-size:13.5px;color:var(--slate)}
+.cta-band{position:relative;padding:80px 0;text-align:center;color:#fff;overflow:hidden}
+.cta-band .bg{position:absolute;inset:0;background:#26241F url('assets/quote.jpg') center/cover no-repeat}
+.cta-band .bg::after{content:'';position:absolute;inset:0;background:rgba(20,17,14,.6)}
+.cta-band .inner{position:relative;z-index:3}
+.cta-band h2{font-size:clamp(28px,3.6vw,44px);margin-bottom:14px}
+.cta-band p{font-size:15px;color:rgba(255,255,255,.9);max-width:520px;margin:0 auto 28px}
+.team{padding:74px 0 50px}
+.team .sec-head{text-align:center;margin-bottom:50px}
+.team .sec-head .eyebrow{display:inline-flex!important;margin-bottom:14px}
+.team .sec-head h2{font-size:clamp(28px,3.4vw,42px)}
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.member{text-align:center;padding:34px 22px 30px;border:1px solid var(--line);background:var(--warm-white);transition:transform .45s ease,box-shadow .45s ease,border-color .45s ease}
+.member:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(44,42,39,.08);border-color:var(--white-oak)}
+.avatar{width:132px;height:132px;margin:0 auto 22px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 35% 30%,#efe7da,#d9ccb8);border:1px solid rgba(138,106,69,.35);box-shadow:0 0 0 6px var(--warm-white),0 0 0 7px rgba(138,106,69,.2);overflow:hidden}
+.avatar span{font-family:var(--serif);font-size:48px;font-style:italic;color:var(--bronze)}
+.avatar img{width:100%;height:100%;object-fit:cover}
+.member h3{font-size:25px;margin-bottom:4px}
+.member .role{display:block;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--bronze);margin-bottom:16px}
+.member .bio{font-size:13.5px;line-height:1.7;color:var(--slate)}
+.member .bio.placeholder{font-style:italic;opacity:.75}
+@media(max-width:1024px){.team-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.team-grid{grid-template-columns:1fr}}
+@media(max-width:768px){
+  .intro-grid{grid-template-columns:1fr;gap:32px}
+  .stats-grid{grid-template-columns:repeat(2,1fr);gap:34px 14px}
+  .val-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<header class="nav" id="nav">
+  <div class="wrap-wide nav-inner">
+    <a href="index.html#home" class="logo" aria-label="V&amp;R Home Builders Inc. home"><img class="logo-l" src="assets/logo-light-sm.png" alt="V&amp;R Home Builders Inc."><img class="logo-d" src="assets/logo-dark-sm.png" alt="" aria-hidden="true"></a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Schedule a Consultation</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="bg" style="background-image:url('assets/contact.jpg')"></div>
+  <div class="wrap inner">
+    <span class="eyebrow">About V&amp;R</span>
+    <h1>Built on Trust &amp; Craft.</h1>
+  </div>
+</section>
+
+<section class="intro reveal">
+  <div class="wrap intro-grid">
+    <div>
+      <span class="eyebrow">Our Story</span>
+      <h2>A Better Building Experience.</h2>
+      <p>V&amp;R Home Builders is a Southern California design-build firm specializing in luxury custom homes and high-end renovations. We partner with homeowners, architects, and designers to bring extraordinary spaces to life.</p>
+      <p>We believe exceptional results start with exceptional relationships. Every project is guided by trust, transparency, and an unwavering commitment to craftsmanship—from the first consultation to the final walkthrough.</p>
+      <p>Our reputation is built one home at a time, and our greatest measure of success is a client who feels at home in a space made just for them.</p>
+    </div>
+    <div class="intro-img"><img src="assets/process.jpg" alt="Crafted interior detail"></div>
+  </div>
+</section>
+
+<section class="stats reveal">
+  <div class="wrap stats-grid">
+    <div class="stat"><div class="num">35+</div><div class="lbl">Years Combined Experience</div></div>
+    <div class="stat"><div class="num">80+</div><div class="lbl">Homes Remodeled</div></div>
+    <div class="stat"><div class="num">5<span class="star" aria-hidden="true">&#9733;</span></div><div class="lbl">Star Reviews</div></div>
+    <div class="stat"><div class="num">100%</div><div class="lbl">Referral Driven</div></div>
+  </div>
+</section>
+
+<section class="team reveal">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow line">The Team</span>
+      <h2>The People Behind Every Build</h2>
+    </div>
+    <div class="team-grid stagger">
+      <article class="member">
+        <div class="avatar" role="img" aria-label="Photo placeholder for Kat"><span>K</span></div>
+        <h3>Kat</h3>
+        <span class="role">RMO&nbsp;/ Co&#8209;Founder</span>
+        <p class="bio">California-licensed General Contractor with 15+ years of construction experience across residential and commercial projects. Kat oversees construction standards, compliance, project coordination, and quality control, helping ensure every V&amp;R project is executed with care and accountability.</p>
+      </article>
+      <article class="member">
+        <div class="avatar" role="img" aria-label="Photo placeholder for Lukas"><span>L</span></div>
+        <h3>Lukas</h3>
+        <span class="role">Business Operations</span>
+        <p class="bio">Real estate investor with experience in fix-and-flips, renovations, and property projects. Lukas oversees V&amp;R&rsquo;s business operations, contracts, marketing, financial processes, and client experience, bringing an owner&rsquo;s perspective to both the construction and business side of each project.</p>
+      </article>
+      <article class="member">
+        <div class="avatar" role="img" aria-label="Photo placeholder for Miguel"><span>M</span></div>
+        <h3>Miguel</h3>
+        <span class="role">Project Manager&nbsp;/ Co&#8209;Founder</span>
+        <p class="bio">Experienced General Contractor and field project manager with a background managing crews and construction projects of varying size and complexity. Miguel oversees day-to-day field operations, scheduling, trades, and project execution from start to finish.</p>
+      </article>
+      <article class="member">
+        <div class="avatar" role="img" aria-label="Photo placeholder for Andrew"><span>A</span></div>
+        <h3>Andrew</h3>
+        <span class="role">Sales &amp; Client Development</span>
+        <p class="bio">Andrew brings experience from former leadership roles along with hands-on experience in construction, renovations, and residential fix-and-flips. He leads client development and sales while helping guide projects from the initial conversation through construction.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="values reveal">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">What Guides Us</span>
+      <h2>Our Values</h2>
+    </div>
+    <div class="val-grid stagger">
+      <div class="val-card">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.4"/><path d="M21 19c0-2.4-1.8-4.4-4-4.4"/></svg>
+        <h3>Client Focused</h3>
+        <p>We listen, collaborate, and tailor every detail to your vision and lifestyle.</p>
+      </div>
+      <div class="val-card">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg>
+        <h3>Quality Craftsmanship</h3>
+        <p>We partner with the best trades and use premium materials on every build.</p>
+      </div>
+      <div class="val-card">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 11l8-6 8 6"/><path d="M6 10v9h12v-9"/><path d="M10 19v-5h4v5"/></svg>
+        <h3>Built to Last</h3>
+        <p>Timeless design, careful execution, and enduring value in every home.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band reveal">
+  <div class="bg"></div>
+  <div class="wrap inner">
+    <h2>Let's Build Something Extraordinary.</h2>
+    <p>Tell us about your project and we'll be in touch to schedule your consultation.</p>
+    <a href="index.html#contact" class="btn btn-gold">Schedule a Consultation</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap-wide foot-top">
+    <div class="foot-brand">
+      <img class="foot-logo" src="assets/logo-light-sm.png" alt="V&amp;R Home Builders Inc.">
+      <p class="foot-tag">Luxury custom homes and high-end renovations, thoughtfully designed and flawlessly built across Southern California.</p>
+    </div>
+    <div class="foot-col">
+      <h6>Explore</h6>
+      <a href="index.html#home">Home</a>
+      <a href="about.html">About</a>
+      <a href="index.html#services">Services</a>
+      <a href="projects.html">Projects</a>
+    </div>
+    <div class="foot-col">
+      <h6>Services</h6>
+      <a href="index.html#services">Custom Homes</a>
+      <a href="index.html#services">Renovations</a>
+      <a href="index.html#services">Kitchens &amp; Baths</a>
+      <a href="index.html#services">Outdoor Living</a>
+    </div>
+    <div class="foot-col">
+      <h6>Contact</h6>
+      <a href="tel:+13234926400">(323) 492-6400</a>
+      <a href="mailto:vrhomebuildersinc@gmail.com">vrhomebuildersinc@gmail.com</a>
+      <span>Los Angeles, CA</span>
+      <span>CA License #1160807</span>
+    </div>
+  </div>
+  <div class="wrap-wide foot-bottom">
+    <span>© 2026 V&amp;R Home Builders Inc. All rights reserved. &nbsp;&middot;&nbsp; CA License #1160807</span>
+    <span><a href="privacy.html" class="foot-legal">Privacy Notice</a> &nbsp;&middot;&nbsp; <a href="https://www.instagram.com/vrhomebuildersinc/" class="foot-legal" target="_blank" rel="noopener">Instagram</a> &nbsp;&middot;&nbsp; <a href="https://www.facebook.com/profile.php?id=61594445502826" class="foot-legal" target="_blank" rel="noopener">Facebook</a> &nbsp;&middot;&nbsp; Los Angeles, California</span>
+  </div>
+</footer>
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60);});
+const burger=document.getElementById('burger');
+burger.addEventListener('click',()=>document.body.classList.toggle('nav-open'));
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>document.body.classList.remove('nav-open')));
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+<script src="fx.js"></script>
+</body>
+</html>
