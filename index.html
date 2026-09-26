@@ -186,6 +186,7 @@ header.nav.solid .logo img,header.nav.scrolled .logo img{height:48px}
 .hero .d1{animation-delay:.25s}.hero .d2{animation-delay:.4s}.hero .d3{animation-delay:.55s}.hero .d4{animation-delay:.7s}.hero .d5{animation-delay:.85s}
 @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){.blueprint g>*{animation:none!important;stroke-dashoffset:0!important}.blueprint .bp-text,.blueprint .bp-block,.blueprint .bp-north{opacity:1;animation:none}}
+.h-item.m-only{display:none}
 @media(max-width:1100px){
   .hero-stage{grid-template-columns:1fr 1fr;row-gap:44px;column-gap:28px;padding-top:120px;padding-bottom:64px;text-align:center}
   .hero-col{display:contents}
@@ -196,6 +197,9 @@ header.nav.solid .logo img,header.nav.scrolled .logo img{height:48px}
   .h-quote{display:none}
   .h-item{order:3;max-width:none;justify-self:center}
   .h-item .tick{display:none}
+  .h-item.i01{order:3}.h-item.i02{order:4}.h-item.i03{order:5}.h-item.i04{order:6}
+  .h-item.m-only{display:block}
+  .hc-bottom{display:none}
 }
 @media(max-width:600px){
   .hero-stage{grid-template-columns:1fr}
@@ -541,7 +545,7 @@ footer{background:var(--dark);color:#fff;padding:34px 0 24px}
         <h1 class="fu d2">We build <br>like it&rsquo;s <br><em>our own.</em></h1>
         <p class="fu d3">Whole-home remodels and custom residences, crafted with precision and made to last.</p>
       </div>
-      <div class="h-item fu d4">
+      <div class="h-item i01 fu d4">
         <span class="h-kicker h-step">01 / Our Work</span>
         <h3>Every home<br>has a story.</h3>
         <p>Full transformations across Los Angeles, from first walkthrough to final detail.</p>
@@ -615,7 +619,13 @@ footer{background:var(--dark);color:#fff;padding:34px 0 24px}
         <a class="h-link" href="#services">Explore Services <span class="ar">&#8599;</span></a>
         <span class="tick" aria-hidden="true"></span>
       </div>
-      <div class="h-item fu d4">
+      <div class="h-item i03 m-only fu d4">
+        <span class="h-kicker h-step">03 / Our Process</span>
+        <h3>First sketch to<br>final walkthrough.</h3>
+        <p>One clear, accountable process from design through construction.</p>
+        <a class="h-link" href="#process">See Our Process <span class="ar">&#8599;</span></a>
+      </div>
+      <div class="h-item i04 fu d4">
         <span class="h-kicker h-step">04 / Begin</span>
         <h3>Let&rsquo;s build<br>yours.</h3>
         <p>Tell us about your vision. We&rsquo;ll take it from there.</p>
